@@ -1,26 +1,43 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <header class="header">
+      <h1 class="title">
+        <router-link to="/"
+          ><i class="nes-pokeball" />Spring boot to kotlin</router-link
+        >
+      </h1>
+    </header>
+    <router-view />
   </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
-
 export default {
-  name: "app",
-  components: {
-    HelloWorld
-  }
+  name: "app"
 };
 </script>
 <style lang="stylus">
+@import "~nes.css/css/nes.min.css";
+
 #app
-  font-family 'Avenir', Helvetica, Arial, sans-serif
-  -webkit-font-smoothing antialiased
-  -moz-osx-font-smoothing grayscale
-  text-align center
-  color #2c3e50
-  margin-top 60px
+    display flex
+    flex-direction column
+    min-height 100vh
+
+.title
+    a
+        text-decoration none;
+        display flex
+        align-items center
+        color: initial;
+    i
+        margin-right 25px
+
+.header
+    padding 15px 25px
+    border-bottom: solid 4px #D3D3D3
+
+.main
+    flex: 1 0 auto;
+    padding 30px 25px 0px 25px
 </style>
