@@ -20,18 +20,15 @@ export default {
     text-decoration none
     color: black
     position relative
+    margin-bottom 10px
     &:hover
       color: black
 
 .selected
 
-  &:hover:before
-    animation: blink 1s infinite steps(1);
-
-
   &:before
+    animation: blink 1s infinite steps(1);
     position: absolute;
-    top: -2px;
     left: -20px;
     content: "";
     width: 2px;

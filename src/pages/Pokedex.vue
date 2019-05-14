@@ -1,5 +1,6 @@
 <template>
   <main class="main">
+    <h2>Pokedex</h2>
     <section class="pokedex">
       <p v-show="pokemons.length === 0" style="margin-top: 30px">
         Loading please wait...
@@ -22,17 +23,14 @@
             v-for="(type, index) in pokemon.types"
             :key="type"
             >{{ type }}</span
-          >FIght
+          >
         </p>
         <p>Height: {{ pokemon.height }}</p>
         <p>Weight: {{ pokemon.weight }}</p>
         <p>Base Experience: {{ pokemon.baseExperience }}</p>
 
-        <!--<h3>Bulbizar</h3>-->
       </section>
     </section>
-
-    <h2>Pokedex</h2>
   </main>
 </template>
 

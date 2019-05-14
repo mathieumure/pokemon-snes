@@ -28,22 +28,29 @@
         >
       </select>
     </div>
-    <button
-      type="button"
-      class="nes-btn is-success"
-      @click="launchFight"
-      v-show="battleStatus === 'ENDED'"
-    >
-      Fight !
-    </button>
-    <p v-if="battleStatus === 'TO_START'">
-      {{ firstPokemonName }} and {{ secondPokemonName }} are getting out of
-      their pokeballs...
-    </p>
-    <p v-if="battleStatus === 'PENDING'">
-      {{ firstPokemonName }} and {{ secondPokemonName }} are now fighting...
-    </p>
-    <p v-if="winner">And {{ winner.name }} wins the fight!!!</p>
+    <div class="result" v-show="battleStatus === 'ENDED'">
+      <button type="button" class="nes-btn is-success" @click="launchFight">
+        Fight !
+      </button>
+    </div>
+    <div class="result">
+      <section
+        class="nes-container with-title"
+        v-if="battleStatus === 'TO_START'"
+      >
+        {{ firstPokemonName }} and {{ secondPokemonName }} are getting out of
+        their pokeballs...
+      </section>
+      <section
+        class="nes-container with-title"
+        v-if="battleStatus === 'PENDING'"
+      >
+        {{ firstPokemonName }} and {{ secondPokemonName }} are now fighting...
+      </section>
+      <section class="nes-container with-title" v-if="winner">
+        And {{ winner.name }} wins the fight!!!
+      </section>
+    </div>
   </main>
 </template>
 
@@ -104,4 +111,11 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style lang="stylus" scoped>
+.nes-select
+  margin-bottom 20px
+.result
+  margin-top 40px
+  display: flex
+  justify-content  center
+</style>

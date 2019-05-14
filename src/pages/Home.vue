@@ -70,4 +70,5 @@ export default {
 .links
     display flex
     flex-direction: column
+    margin-top 30px
 </style>
